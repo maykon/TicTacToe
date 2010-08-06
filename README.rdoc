@@ -1,16 +1,33 @@
-= tic-tac-toe
+= Tic-Tac-Toe
 
-Description goes here.
+* http://github.com/maykon/TicTacToe
 
-== Note on Patches/Pull Requests
+= Description
+
+Jogo da Velha feito em Ruby utilizando o Shoes para criar a parte gráfica.
+
+== Dependencies
  
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+* ruby 1.8.6
+* Shoes[http://github.com/shoes/shoes]
+
+== Support
+
+If you need support send e-mail to:
+
+  * maykon_capellari@yahoo.com.br
+
+The bug tracker is available here:
+
+  * http://github.com/maykon/TicTacToe/issues
+
+== Usage
+
+Open de Shoes application and click and "Open an App." or click on menu Shoes/Open and select de file tic_shoes.rb.
+
+h2. Authors
+
+* Maykon Luís Capellari [http://github.com/maykon] (maykon_capellari@yahoo.com.br)}
 
 == Copyright
 
