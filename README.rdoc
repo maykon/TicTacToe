@@ -2,33 +2,33 @@
 
 * http://github.com/maykon/TicTacToe
 
-= Description
+== Descrição
 
 Jogo da Velha feito em Ruby utilizando o Shoes para criar a parte gráfica.
 
-== Dependencies
+== Dependências
  
 * ruby 1.8.6
 * Shoes[http://github.com/shoes/shoes]
 
-== Support
+== Suporte
 
-If you need support send e-mail to:
+Caso precisar de ajuda, mande um e-mail par:
 
   * maykon_capellari@yahoo.com.br
 
-The bug tracker is available here:
+O bug tracker está disponível aqui:
 
   * http://github.com/maykon/TicTacToe/issues
 
-== Usage
+== USo
 
-Open de Shoes application and click and "Open an App." or click on menu Shoes/Open and select de file tic_shoes.rb.
+Abra o aplicativo Shoes e clique na opção "Open an App." ou selecione a opção no menu Shoes/Open e selecione o arquivo *tic_shoes.rb* que está dentro da past lib.
 
-h2. Authors
+== Autores
 
 * Maykon Luís Capellari [http://github.com/maykon] (maykon_capellari@yahoo.com.br)}
 
 == Copyright
 
-Copyright (c) 2010 Maykon Luís Capellari. See LICENSE for details.
+Copyright (c) 2010 Maykon Luís Capellari. Veja o arquivo LICENSE para mais detalhes.
