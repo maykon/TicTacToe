@@ -21,7 +21,7 @@ O bug tracker está disponível aqui:
 
   * http://github.com/maykon/TicTacToe/issues
 
-== USo
+== Modo de Usar
 
 Abra o aplicativo Shoes e clique na opção "Open an App." ou selecione a opção no menu Shoes/Open e selecione o arquivo *tic_shoes.rb* que está dentro da past lib.
 
