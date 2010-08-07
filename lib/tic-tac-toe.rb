@@ -50,12 +50,12 @@ class GameBoard
   def set(position)
     if verify(position)
       @game_board[position] = @player
-    
+        
       status = win?
       if status && @win == false
         win
       end
-    
+      
       set_pc if !completed? && @win == false
     end
   end
@@ -126,6 +126,11 @@ class GameBoard
     end
     @last_pc = position
     @game_board[position] = @pc
+    
+    status = win?
+    if status && @win == false
+      win
+    end
   end
   
   def to_s

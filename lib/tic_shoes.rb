@@ -65,6 +65,11 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
          @win = true
          pos = @tic.game_board.selected_cell
          draw_line(pos)
+         if @tic.result == @tic.player
+           alert("Parabéns! Você ganhou.")
+         else
+           alert("Que Pena! Você perdeu.")
+         end
        end
        if @tic.result == "Velha"
          alert("Velha")
