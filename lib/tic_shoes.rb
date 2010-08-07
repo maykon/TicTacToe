@@ -19,6 +19,13 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
   @board = nil
   @line_win = []
   @win = false
+  @totalX = 0
+  @total0 = 0
+  
+  para "Jogador", :stroke => darkred
+   @player = list_box :items => [Player::X, Player::CIRCLE],
+      :width => 50, :choose => Player::X do |list|
+   end
   
   def draw_line(position)
     stroke black
@@ -31,13 +38,9 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
   end
   	  	
 	button "New Game", :width => 100 do
-    # Clear the screen
-  	@cells.each{ |d| d.remove }	
-  	@line_win.each{ |d| d.remove }
-  	
-  	@win = false
-    @tic = TicTacToe.new Player::X
-  end  
+    new_game
+    clear_placar
+  end
   @board = image('figs/board.png', :top => 35, :left => 0)
 
  9.times do |i|
@@ -60,21 +63,63 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
            draw_player(@tic.player, i)
            draw_player(@tic.pc, @tic.last_pc) # if @tic.last_pc != -1 && !@tic.game_board.completed?
          end
-       end
-       if @tic.result != false && @tic.result != "Velha" 
-         @win = true
-         pos = @tic.game_board.selected_cell
-         draw_line(pos)
-         if @tic.result == @tic.player
-           alert("Parabéns! Você ganhou.")
-         else
-           alert("Que Pena! Você perdeu.")
+         if @tic.result != false && @tic.result != "Velha" 
+           @win = true
+           pos = @tic.game_board.selected_cell
+           draw_line(pos)
+           
+           set_placar
+           
+           if @tic.result == @tic.player
+             alert("Parabéns! Você ganhou.")
+             new_game
+           else
+             alert("Que Pena! Você perdeu.")
+             new_game
+           end
+         end
+         if @tic.result == "Velha"
+           alert("Velha")
+           new_game
          end
        end
-       if @tic.result == "Velha"
-         alert("Velha")
-       end
-     end
+      end
    end
  end
+ 
+ def set_placar
+   case(@tic.result)
+     when Player::X :
+       @totalX += 1
+       @resultX.text = @totalX
+     when Player::CIRCLE :
+       @total0 += 1
+       @result0.text = @total0
+    end
+ end
+ 
+ def clear_placar
+   @totalX = 0
+   @resultX.text = @totalX
+   @total0 = 0
+   @result0.text = @total0 
+ end
+ 
+ def new_game
+   # Clear the screen
+ 	 @cells.each{ |d| d.remove }	
+ 	 @line_win.each{ |d| d.remove }
+ 	
+ 	 @win = false
+   @tic = TicTacToe.new @player.text
+ end
+ 
+ para "Resultado X:", :stroke => darkred   
+ @resultX = para "#{@totalX}", :stroke => black
+ 
+ para " - "
+ 
+ #para "#{Player.versus(@player.text)}", :stroke => darkred   
+ para "O:", :stroke => darkred   
+ @result0 = para "#{@total0}", :stroke => black
 end

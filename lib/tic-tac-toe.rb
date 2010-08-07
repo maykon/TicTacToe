@@ -5,10 +5,7 @@ class TicTacToe
   
   def initialize(player)
     @player = player
-    @pc = case(player)
-            when Player::CIRCLE : Player::X
-            when Player::X : Player::CIRCLE
-          end
+    @pc = Player.versus(player)
     @game_board = GameBoard.new @player, @pc
   end
   
@@ -148,6 +145,13 @@ end
 class Player
   CIRCLE = "0"
   X = "X"
+  
+  def self.versus(player)
+    case(player)
+      when Player::CIRCLE : Player::X
+      when Player::X : Player::CIRCLE
+    end
+  end
 end
 
 # tic = TicTacToe.new Player::X
