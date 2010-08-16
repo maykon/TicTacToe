@@ -21,6 +21,7 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
   @win = false
   @totalX = 0
   @total0 = 0
+  @turn_pc = false
   
   para "Jogador", :stroke => darkred
    @player = list_box :items => [Player::X, Player::CIRCLE],
@@ -38,9 +39,9 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
   end
   	  	
 	button "New Game", :width => 100 do
-    new_game
-    clear_placar
+    new_game!
   end
+  
   @board = image('figs/board.png', :top => 35, :left => 0)
 
  9.times do |i|
@@ -61,7 +62,9 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
          if @tic.game_board.verify(i)
            @tic.set(i)
            draw_player(@tic.player, i)
-           draw_player(@tic.pc, @tic.last_pc) # if @tic.last_pc != -1 && !@tic.game_board.completed?
+ 
+           @tic.set_pc 
+           draw_player(@tic.pc, @tic.last_pc)
          end
          if @tic.result != false && @tic.result != "Velha" 
            @win = true
@@ -102,15 +105,32 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
    @totalX = 0
    @resultX.text = @totalX
    @total0 = 0
-   @result0.text = @total0 
+   @result0.text = @total0
+   @turn_pc = false
+ end
+ 
+ def new_game!
+   clear_game
+   clear_placar
+   @turn_pc = false
  end
  
  def new_game
+   clear_game
+   
+   if @turn_pc   
+     @tic.set_pc 
+     draw_player(@tic.pc, @tic.last_pc)
+   end
+ end
+ 
+ def clear_game
    # Clear the screen
  	 @cells.each{ |d| d.remove }	
  	 @line_win.each{ |d| d.remove }
  	
  	 @win = false
+ 	 @turn_pc = @turn_pc == true ? false : true
    @tic = TicTacToe.new @player.text
  end
  

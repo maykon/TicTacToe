@@ -17,6 +17,10 @@ class TicTacToe
     @game_board.set(position)
   end
   
+  def set_pc   
+    @game_board.set_pc
+  end
+  
   def result
      @game_board.result
   end
@@ -52,8 +56,6 @@ class GameBoard
       if status && @win == false
         win
       end
-      
-      set_pc if !completed? && @win == false
     end
   end
   
@@ -116,17 +118,23 @@ class GameBoard
   end
   
   def set_pc
-    position = -1
-    loop do
-      position = rand(9)
-      break if verify(position)
-    end
-    @last_pc = position
-    @game_board[position] = @pc
+    if !completed? && @win == false
+      position = -1
+      loop do
+        pl = rand(9)
+        if verify(pl)
+          position = pl
+          break
+        end
+        break if completed?
+      end
+      @last_pc = position
+      @game_board[position] = @pc if position != -1
     
-    status = win?
-    if status && @win == false
-      win
+      status = win?
+      if status && @win == false
+        win
+      end
     end
   end
   
@@ -153,14 +161,3 @@ class Player
     end
   end
 end
-
-# tic = TicTacToe.new Player::X
-# #tic.game_board.game_board = ["_"] * 9
-# #p tic.game_board.completed?
-# tic.set 1
-# puts tic.game_board.game_board
-# puts tic.last_pc
-# 
-# tic.set 5
-# puts tic.game_board.game_board
-# puts tic.last_pc
