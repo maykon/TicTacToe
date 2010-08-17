@@ -14,7 +14,10 @@
    id="svg5417"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="New document 22">
+   sodipodi:docname="o.svg"
+   inkscape:export-filename="/Users/maykon/Projects/tic-tac-toe/lib/figs/0.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs5419">
     <inkscape:perspective
@@ -40,7 +43,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.2209226"
-     inkscape:cx="31.688243"
+     inkscape:cx="-25.748716"
      inkscape:cy="65.878227"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -69,7 +72,7 @@
      transform="translate(0,-902.36218)">
     <text
        xml:space="preserve"
-       style="font-size:170px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#800000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       style="font-size:170px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#183688;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
        x="8.59375"
        y="1038.2069"
        id="text5441"

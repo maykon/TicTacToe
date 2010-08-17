@@ -140,6 +140,6 @@ Shoes.app :title => "Tic-Tac-Toe", :width => 460, :height => 500, :resizable => 
  para " - "
  
  #para "#{Player.versus(@player.text)}", :stroke => darkred   
- para "O:", :stroke => darkred   
+ para "O:", :stroke => darkblue   
  @result0 = para "#{@total0}", :stroke => black
 end
